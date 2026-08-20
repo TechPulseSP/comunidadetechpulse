@@ -34,7 +34,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
     discord: {
         integration: "統合",
         explainText:
-            "ここで Discord アカウントを接続すると、Workadventure チャットでメッセージを直接受信できるようになります。サーバーを同期後、含まれているルームを作成します。Workadventure チャットでそれらに参加するだけで済みます。",
+            "ここで Discord アカウントを接続すると、TechPulse チャットでメッセージを直接受信できるようになります。サーバーを同期後、含まれているルームを作成します。TechPulse チャットでそれらに参加するだけで済みます。",
         login: "Discord に接続",
         fetchingServer: "Discord サーバーを取得中... 👀",
         qrCodeTitle: "Discord アプリで QR コードをスキャンしてログインしてください。",
@@ -55,13 +55,13 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         tokenPlaceholder: "Discord トークン",
         loginWithQrCode: "QR コードでログイン",
         guilds: "Discord サーバー",
-        guildExplain: "Workadventure チャットインターフェースに追加するチャンネルを選択してください。\n",
+        guildExplain: "TechPulse チャットインターフェースに追加するチャンネルを選択してください。\n",
     },
     outlook: {
         signIn: "Outlook でサインイン",
         popupScopeToSync: "Outlook アカウントに接続",
         popupScopeToSyncExplainText:
-            "カレンダーやタスクを同期するために、Outlook アカウントに接続する必要があります。これにより、WorkAdventure で会議やタスクを表示し、マップから直接参加できるようになります。",
+            "カレンダーやタスクを同期するために、Outlook アカウントに接続する必要があります。これにより、TechPulse で会議やタスクを表示し、マップから直接参加できるようになります。",
         popupScopeToSyncCalendar: "カレンダーを同期",
         popupScopeToSyncTask: "タスクを同期",
         popupCancel: "キャンセル",
@@ -83,7 +83,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         signIn: "Google でサインイン",
         popupScopeToSync: "Google アカウントに接続",
         popupScopeToSyncExplainText:
-            "カレンダーやタスクを同期するために、Google アカウントに接続する必要があります。これにより、WorkAdventure で会議やタスクを表示し、マップから直接参加できるようになります。",
+            "カレンダーやタスクを同期するために、Google アカウントに接続する必要があります。これにより、TechPulse で会議やタスクを表示し、マップから直接参加できるようになります。",
         popupScopeToSyncCalendar: "カレンダーを同期",
         popupScopeToSyncTask: "タスクを同期",
         popupCancel: "キャンセル",

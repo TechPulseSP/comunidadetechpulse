@@ -34,7 +34,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
     discord: {
         integration: "INTEGRACIÓ",
         explainText:
-            "En connectar el vostre compte de Discord aquí, podreu rebre els vostres missatges directament al xat de Workadventure. Després de sincronitzar un servidor, crearem les sales que conté, només haureu d'unir-vos-hi al xat de Workadventure.",
+            "En connectar el vostre compte de Discord aquí, podreu rebre els vostres missatges directament al xat de TechPulse. Després de sincronitzar un servidor, crearem les sales que conté, només haureu d'unir-vos-hi al xat de TechPulse.",
         login: "Connectar a Discord",
         fetchingServer: "Obtenint els vostres servidors de Discord... 👀",
         qrCodeTitle: "Escanegeu el codi QR amb la vostra aplicació de Discord per iniciar sessió.",
@@ -55,13 +55,13 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         tokenPlaceholder: "El vostre token de Discord",
         loginWithQrCode: "Iniciar sessió amb codi QR",
         guilds: "Servidors de Discord",
-        guildExplain: "Seleccioneu els canals que voleu afegir a la interfície de xat de Workadventure.\n",
+        guildExplain: "Seleccioneu els canals que voleu afegir a la interfície de xat de TechPulse.\n",
     },
     outlook: {
         signIn: "Iniciar sessió amb Outlook",
         popupScopeToSync: "Connectar el meu compte d'Outlook",
         popupScopeToSyncExplainText:
-            "Necessitem connectar-nos al vostre compte d'Outlook per sincronitzar el vostre calendari i/o tasques. Això us permetrà veure les vostres reunions i tasques a WorkAdventure i unir-vos-hi directament des del mapa.",
+            "Necessitem connectar-nos al vostre compte d'Outlook per sincronitzar el vostre calendari i/o tasques. Això us permetrà veure les vostres reunions i tasques a TechPulse i unir-vos-hi directament des del mapa.",
         popupScopeToSyncCalendar: "Sincronitzar el meu calendari",
         popupScopeToSyncTask: "Sincronitzar les meves tasques",
         popupCancel: "Cancel·lar",
@@ -83,7 +83,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         signIn: "Iniciar sessió amb Google",
         popupScopeToSync: "Connectar el meu compte de Google",
         popupScopeToSyncExplainText:
-            "Necessitem connectar-nos al vostre compte de Google per sincronitzar el vostre calendari i/o tasques. Això us permetrà veure les vostres reunions i tasques a WorkAdventure i unir-vos-hi directament des del mapa.",
+            "Necessitem connectar-nos al vostre compte de Google per sincronitzar el vostre calendari i/o tasques. Això us permetrà veure les vostres reunions i tasques a TechPulse i unir-vos-hi directament des del mapa.",
         popupScopeToSyncCalendar: "Sincronitzar el meu calendari",
         popupScopeToSyncTask: "Sincronitzar les meves tasques",
         popupCancel: "Cancel·lar",

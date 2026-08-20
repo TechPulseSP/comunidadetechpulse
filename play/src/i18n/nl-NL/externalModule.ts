@@ -34,7 +34,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
     discord: {
         integration: "INTEGRATIE",
         explainText:
-            "Door uw Discord-account hier te verbinden, kunt u uw berichten rechtstreeks in de Workadventure-chat ontvangen. Na het synchroniseren van een server, maken we de kamers die deze bevat, u hoeft zich alleen maar bij hen aan te sluiten in de Workadventure-chat.",
+            "Door uw Discord-account hier te verbinden, kunt u uw berichten rechtstreeks in de TechPulse-chat ontvangen. Na het synchroniseren van een server, maken we de kamers die deze bevat, u hoeft zich alleen maar bij hen aan te sluiten in de TechPulse-chat.",
         login: "Verbind met Discord",
         fetchingServer: "Uw Discord-servers ophalen... 👀",
         qrCodeTitle: "Scan de QR-code met uw Discord-app om in te loggen.",
@@ -54,13 +54,13 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         tokenPlaceholder: "Uw Discord-token",
         loginWithQrCode: "Inloggen met QR-code",
         guilds: "Discord-servers",
-        guildExplain: "Selecteer de kanalen die u wilt toevoegen aan de Workadventure-chatinterface.\n",
+        guildExplain: "Selecteer de kanalen die u wilt toevoegen aan de TechPulse-chatinterface.\n",
     },
     outlook: {
         signIn: "Inloggen met Outlook",
         popupScopeToSync: "Mijn Outlook-account verbinden",
         popupScopeToSyncExplainText:
-            "We moeten verbinding maken met uw Outlook-account om uw agenda en/of taken te synchroniseren. Dit stelt u in staat om uw vergaderingen en taken in WorkAdventure te bekijken en er direct vanuit de kaart aan deel te nemen.",
+            "We moeten verbinding maken met uw Outlook-account om uw agenda en/of taken te synchroniseren. Dit stelt u in staat om uw vergaderingen en taken in TechPulse te bekijken en er direct vanuit de kaart aan deel te nemen.",
         popupScopeToSyncCalendar: "Mijn agenda synchroniseren",
         popupScopeToSyncTask: "Mijn taken synchroniseren",
         popupCancel: "Annuleren",
@@ -82,7 +82,7 @@ const externalModule: DeepPartial<Translation["externalModule"]> = {
         signIn: "Inloggen met Google",
         popupScopeToSync: "Mijn Google-account verbinden",
         popupScopeToSyncExplainText:
-            "We moeten verbinding maken met uw Google-account om uw agenda en/of taken te synchroniseren. Dit stelt u in staat om uw vergaderingen en taken in WorkAdventure te bekijken en er direct vanuit de kaart aan deel te nemen.",
+            "We moeten verbinding maken met uw Google-account om uw agenda en/of taken te synchroniseren. Dit stelt u in staat om uw vergaderingen en taken in TechPulse te bekijken en er direct vanuit de kaart aan deel te nemen.",
         popupScopeToSyncCalendar: "Mijn agenda synchroniseren",
         popupScopeToSyncTask: "Mijn taken synchroniseren",
         popupCancel: "Annuleren",

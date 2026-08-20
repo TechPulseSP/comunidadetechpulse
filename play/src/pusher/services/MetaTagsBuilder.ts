@@ -13,11 +13,11 @@ import { ADMIN_API_URL } from "../enums/EnvironmentVariable";
 import { adminService } from "./AdminService";
 
 export const MetaTagsDefaultValue: RequiredMetaTagsData = {
-    title: "WorkAdventure",
+    title: "Comunidade TechPulse",
     description:
-        "Organize your online event in WorkAdventure to recreate spontaneous social interactions. Connect, collaborate and have fun with your teammates and attendees.",
-    author: "WorkAdventure team",
-    provider: "WorkAdventure",
+        "Espaco virtual da TechPulse para encontros, colaboracao e conversas espontaneas entre a equipe.",
+    author: "TechPulse",
+    provider: "TechPulse",
     favIcons: [
         {
             rel: "icon",
@@ -32,10 +32,10 @@ export const MetaTagsDefaultValue: RequiredMetaTagsData = {
             type: "image/png",
         },
     ],
-    appName: "WorkAdventure",
-    shortAppName: "WA",
-    themeColor: "#1B2A41",
-    cardImage: "https://workadventu.re/images/general/logo-og.png",
+    appName: "Comunidade TechPulse",
+    shortAppName: "TechPulse",
+    themeColor: "#3E8BF7",
+    cardImage: "/static/images/favicons/icon-512x512.png",
 };
 
 export class MetaTagsBuilder {

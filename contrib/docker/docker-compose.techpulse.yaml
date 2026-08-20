@@ -1,0 +1,90 @@
+# =============================================================================
+# Override de implantacao da TechPulseSP — uso INTERNO.
+#
+# Aplicado SOBRE contrib/docker/docker-compose.prod.yaml, nunca editando aquele
+# arquivo. O upstream publica atualizacoes com frequencia (cerca de uma vez por
+# mes, conforme docs/others/self-hosting/install.md), e manter as mudancas num
+# override deixa o `git merge upstream/master` sem conflito.
+#
+# Uso:
+#   cd contrib/docker
+#   cp .env.prod.template .env      # preencher; o .gitignore ja ignora o .env
+#   docker compose -f docker-compose.prod.yaml -f docker-compose.techpulse.yaml up -d
+#
+# O que este arquivo faz, e por que:
+#
+#   1. Desliga o reverse-proxy do upstream. O host ja tem um Traefik proprio
+#      ocupando as portas 80 e 443; subir um segundo daria conflito de porta.
+#      Feito com `profiles`: um servico com profile so sobe se o profile for
+#      pedido explicitamente, e nao existe forma de REMOVER um servico por
+#      override — apenas de condicionar a subida dele.
+#
+#   2. Troca o certResolver. O do upstream chama-se `myresolver` e e definido
+#      pelo Traefik que acabamos de desligar; o do host chama-se `letsencrypt`.
+#      Os entrypoints (`web` e `websecure`) coincidem, entao nao precisam mudar.
+#
+#   3. Coloca os servicos roteados na rede externa do Traefik do host e os
+#      demais numa rede privada. Somente `redis` fica fora da rede publica: ele
+#      nao tem router e nao deve ser alcancavel por outros stacks.
+#
+#   4. Define teto de memoria por servico. O host executa outros sistemas em
+#      paralelo; sem limite, um pico aqui poderia causar OOM neles. Os valores
+#      abaixo somam cerca de 1,6 GB.
+#
+# NAO cobre LiveKit nem Coturn (video em grupo e relay TURN). Consequencias,
+# conforme a documentacao do upstream: audio/video funciona apenas peer-to-peer
+# em bolhas de ate 4 pessoas, e cerca de 15% dos usuarios em redes que bloqueiam
+# P2P nao conseguem estabelecer audio/video. Ambos exigem portas UDP.
+# =============================================================================
+
+services:
+
+  # (1) nao sobe junto com o stack; ver o cabecalho.
+  reverse-proxy:
+    profiles: ["proxy-do-upstream"]
+
+  play:
+    mem_limit: 512m
+    networks: [traefik-public, interna]
+    labels:
+      traefik.http.routers.play-ssl.tls.certresolver: "letsencrypt"
+      traefik.http.routers.play-ws-ssl.tls.certresolver: "letsencrypt"
+      traefik.http.routers.room-api.tls.certresolver: "letsencrypt"
+
+  back:
+    mem_limit: 384m
+    networks: [traefik-public, interna]
+    labels:
+      traefik.http.routers.back-ssl.tls.certresolver: "letsencrypt"
+
+  map-storage:
+    mem_limit: 256m
+    networks: [traefik-public, interna]
+    labels:
+      traefik.http.routers.map-storage-ssl.tls.certresolver: "letsencrypt"
+
+  uploader:
+    mem_limit: 192m
+    networks: [traefik-public, interna]
+    labels:
+      traefik.http.routers.uploader-ssl.tls.certresolver: "letsencrypt"
+
+  icon:
+    mem_limit: 128m
+    networks: [traefik-public, interna]
+    labels:
+      traefik.http.routers.icon-ssl.tls.certresolver: "letsencrypt"
+      traefik.http.routers.lettericons-ssl.tls.certresolver: "letsencrypt"
+
+  # Sem router e fora da rede publica de proposito.
+  redis:
+    mem_limit: 160m
+    networks: [interna]
+
+networks:
+  # Rede do Traefik do host. Criar antes, se nao existir:
+  #   docker network create traefik-public
+  traefik-public:
+    external: true
+  # Rede privada deste stack (play <-> back <-> redis <-> map-storage).
+  interna:
